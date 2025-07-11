@@ -8,20 +8,15 @@ Welcome to my college portfolio! I'm a computer science graduate, and here you w
 
 ## 💻Projects💻
 
-**🔴[Connect-4 Game](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/connect-4)🟡**
+**☀️[Weather App](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/weatherapp)🌧️**
 
-**Contributors**:
-- Austin Saylor
-- Kyle Remmenga
-- Kian Highland
-
-A basic connect-4 game which was built using python with object-oriented-design principles. Each "component" of the game, such as red/yellow chips, open spots to place them, and the board, is viewed as an object. This project uses the pygame library to provide a graphical interface to display the game on.
+A simple weather app which runs in the terminal. This app was built using object-oriented design in python and uses textual to create a user interface that is cleaner and more sophisticated than a raw command-line interface. It allows users to search for a location based on a city name or zip code. State and/or country abbreviations can also be provided to further specify the location to be searched. The app utilizes API to provide real-time weather data for the chosen location, and provides the current temperature, weather condition, wind speed and direction, sunrise/sunset times, and more.
 
 **Completed**: Spring 2024
 
-**Languages**: Python
+**Languages**: Python, CSS
 
-**Key Skills**: Object-Oriented Design, Pygame
+**Key Skills**: Object-Oriented Design, API, Textual
 
 ------------------------------------------------
 **🌎[Solar System Simulator](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/solar-system)🪐**
@@ -39,15 +34,20 @@ The WebGL version is more extensive- it contains the sun along with all 8 planet
 **Key Skills**: WebGL, OpenGL, Shaders
 
 ------------------------------------------------
-**☀️[Weather App](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/weatherapp)🌧️**
+**🔴[Connect-4 Game](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/connect-4)🟡**
 
-A simple weather app which runs in the terminal. This app was built using object-oriented design in python and uses textual to create a user interface that is cleaner and more sophisticated than a raw command-line interface. It allows users to search for a location based on a city name or zip code. State and/or country abbreviations can also be provided to further specify the location to be searched. The app utilizes API to provide real-time weather data for the chosen location, and provides the current temperature, weather condition, wind speed and direction, sunrise/sunset times, and more.
+**Contributors**:
+- Austin Saylor
+- Kyle Remmenga
+- Kian Highland
+
+A basic connect-4 game which was built using python with object-oriented-design principles. Each "component" of the game, such as red/yellow chips, open spots to place them, and the board, is viewed as an object. This project uses the pygame library to provide a graphical interface to display the game on.
 
 **Completed**: Spring 2024
 
-**Languages**: Python, CSS
+**Languages**: Python
 
-**Key Skills**: Object-Oriented Design, API, Textual
+**Key Skills**: Object-Oriented Design, Pygame
 
 ----------------------------------------
 
