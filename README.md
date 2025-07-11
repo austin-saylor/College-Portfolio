@@ -51,7 +51,7 @@ A simple weather app which runs in the terminal. This app was built using object
 
 ----------------------------------------
 
-**🎂[Birthday Calculator]()🗓️**
+**🎂[Birthday Calculator](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/BirthdayCalculator)🗓️**
 
 A simple C# program which calculates the user's age after they input their birth day, month, and year. Appropriate checks are in place to determine if the user has an age that is realistically possible (>0 years and <=150 years). Additionally, the program outputs the user's astrological information, based on both western and chinese zodiac systems.
 
@@ -67,15 +67,15 @@ A simple C# program which calculates the user's age after they input their birth
 - **[Network Scanner](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/networkscanner)**: A Python network scanner which uses ARP scanning, ICMP scanning, and port scanning to provide information about networks. This was tested on a virtual network that I built in GNS3.
 - **[C++ vs Java Performance Comparison](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/performance-comparison)**: An analysis of the pros and cons of using C++ and Java for development. This project also contains a graph that was programmed in both languages, for the purpose of comparing how fast each language can analyze the graph using Dijkstra's Algorithm.
 - **[Starvation and Aging Program](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/starvation-and-aging)**: A C++ program which illustrates the concept of starvation and aging in process management.
-- **[Point Calculator]()**: A C# program which performs mathematical operations on cartesion coordinate points.
-- **[Event Manager]()**: A C# program which utilizes asynchronous programming to manage customer orders.
-- **[Customer Management]()**: A C# program which uses interfaces to manage a list of customers.
+- **[Point Calculator](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/PointCalculator)**: A C# program which performs mathematical operations on cartesion coordinate points.
+- **[Event Manager](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/EventManager)**: A C# program which utilizes asynchronous programming to manage customer orders.
+- **[Customer Management](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/CustomerManagement)**: A C# program which uses interfaces to manage a list of customers.
 - **[Hangman Game](https://github.com/austin-saylor/College-Portfolio/tree/main/projects/hangman)**: A simple command-line game of hangman programmed in C++.
 
 ------------------------------------------------
 ## 💻Assignments💻
 
-**🛑[Sign Detection]()⚠️**
+**🛑[Sign Detection](https://github.com/austin-saylor/College-Portfolio/tree/main/assignments/computer-vision/sign-detection)⚠️**
 
 This is a python program which analyzes basic images containing shapes which resemble road signs. It analyzes the image to check for shapes, colors, and angles to identify various road signs. Then, it analyzes the individual shapes to identify a center point and label the sign. This program uses OpenCV to process the images.
 
@@ -87,7 +87,7 @@ This is a python program which analyzes basic images containing shapes which res
 
 ------------------------------------------------
 
-**🏙️[Objects in C#]()🌆**
+**🏙️[Objects in C#](https://github.com/austin-saylor/College-Portfolio/tree/main/assignments/csharp/HW5)🌆**
 
 A simple program which demonstrates object-oriented design in C#. It defines 'cities' as objects and displays information about them, such as name, country, and population, which are stored as parameters.
 
@@ -105,6 +105,6 @@ I've done many kattis problems ranging in difficulty as assignments. Some of the
 -----------------------------------------------
 **⚙️Other Assignments⚙️**:
 
-Many other assignments that I've done can be found [here]().
+Many other assignments that I've done can be found [here](https://github.com/austin-saylor/College-Portfolio/tree/main/assignments).
 
 [LinkedIn]: https://www.linkedin.com/in/austin-saylor-08b1a4209/
