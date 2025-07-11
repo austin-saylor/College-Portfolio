@@ -1,0 +1,19 @@
+@startuml
+scale 2
+title "UML Abstract Class Diagram"
+class Cup_List {
+    -__cups: TypedList[Cup]
+
+    +__init__() : None
+    +cups() : TypedList[Cup]
+    +len() : int
+    +__getitem__(index: int) : Cup
+    +__getitem__(index: slice) : MutableSequence[Cup]
+    +__getitem__(index: int | slice) : Cup | MutableSequence[Cup]
+    +__setitem__(index: int, value: Cup) : None
+    +__setitem__(index: slice, value: Iterable[Cup]) : None
+    +__setitem__(index: int | slice, value: Cup | Iterable[Cup]) : None
+    +__delitem__(index: int | slice) : None
+    +insert(index: int, value: Cup) : None
+}
+@enduml

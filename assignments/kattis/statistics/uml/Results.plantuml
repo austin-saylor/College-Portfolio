@@ -1,0 +1,14 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Results {
+    +_case() : str
+    +_case_num() : str
+
+    +__init__(case: list[int], case_num: int) : None
+    +super.__init__(case[1:]) : None
+    +__case : str
+    +__case_num : str
+    +get() : str
+}
+@enduml

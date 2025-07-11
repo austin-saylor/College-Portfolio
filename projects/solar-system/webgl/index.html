@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Solar System Simulator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        uniform vec3 lightColor;    // Color of the light
+        uniform sampler2D texture1; // Texture of the object
+
+        varying vec3 vNormal;       // Normal passed from vertex shader
+        varying vec3 vLightDir;     // Light direction passed from vertex shader
+        varying vec2 vUV;           // Texture coordinates
+        varying vec3 fBodyPos;
+        varying vec3 fLightPos;
+    
+        void main() {
+            vec3 normal = normalize(vNormal);
+            vec3 lightDir = normalize(vLightDir);
+
+            float diff = max(dot(normal, lightDir), 0.0);
+
+            vec4 texColor = vec4(texture(texture1, vUV));
+
+            float dist = sqrt((fBodyPos.x - fLightPos.x) * (fBodyPos.x - fLightPos.x) +  
+                              (fBodyPos.y - fLightPos.y) * (fBodyPos.y - fLightPos.x) + 
+                              (fBodyPos.z - fLightPos.z) * (fBodyPos.z - fLightPos.z));
+
+            float attenuation = 500.0 / (0.1 * (dist * dist));
+            vec3 diffuse = diff * lightColor * texColor.rgb * attenuation;
+
+            gl_FragColor = vec4(diffuse, texColor.a);
+        }
+    </script>    
+    <script id="vertexShader" type="x-shader/x-vertex">
+        uniform vec3 lightPos;
+        uniform vec3 bodyPos;
+
+        varying vec3 fBodyPos;
+        varying vec3 fLightPos;
+        varying vec3 vNormal;
+        varying vec3 vLightDir;
+        varying vec2 vUV;
+    
+        void main() {
+            vNormal = normalize(normalMatrix * normal);
+
+            vec4 lightPosView = viewMatrix * vec4(lightPos, 1.0);
+    
+            // Calculate light direction
+            vec4 viewPosition = modelViewMatrix * vec4(position, 1.0);
+            vLightDir = normalize(lightPosView.xyz - viewPosition.xyz);
+    
+            vUV = uv;
+
+            fBodyPos = bodyPos;
+            fLightPos = lightPos;
+    
+            gl_Position = projectionMatrix * viewPosition;
+        }
+    </script>
+    <script id="atmosFragmentShader" type="x-shader/x-vertex">
+        uniform vec3 lightColor;    // Color of the light
+        uniform vec3 atmosColor;    // Color of the atmosphere
+        
+        varying vec3 vNormal;       // Normal passed from vertex shader
+        varying vec3 vLightDir;     // Light direction passed from vertex shader
+        varying vec3 fBodyPos;
+        varying vec3 fLightPos;
+        
+        void main() {
+            vec3 normal = normalize(vNormal);
+            vec3 lightDir = normalize(vLightDir);
+        
+            // Calculate light intensity on the atmosphere
+            float lightIntensity = max(dot(normal, lightDir), 0.0);
+        
+            float dist = length(fBodyPos - fLightPos);
+            float attenuation = 500.0 / (1.0 + 0.1 * (dist * dist)); 
+        
+            // Calculate the density of the atmosphere
+            float viewAngle = max(dot(normal, vec3(0.0, 0.0, 1.0)), 0.0);
+            float density = pow(1.0 - viewAngle, 2.0);
+        
+            // Final atmospheric color
+            vec3 atmosphere = atmosColor * lightColor * lightIntensity * density * attenuation;
+        
+            gl_FragColor = vec4(atmosphere, 1.0); // Pure atmosphere color
+        }
+    </script>
+    <script id="atmosVertexShader" type="x-shader/x-vertex">
+        uniform vec3 lightPos;
+        uniform vec3 bodyPos;
+
+        varying vec3 fBodyPos;
+        varying vec3 fLightPos;
+        varying vec3 vNormal;
+        varying vec3 vLightDir;
+    
+        void main() {
+            vNormal = normalize(normalMatrix * normal);
+
+            vec4 lightPosView = viewMatrix * vec4(lightPos, 1.0);
+    
+            // Calculate light direction
+            vec4 viewPosition = modelViewMatrix * vec4(position, 1.0);
+            vLightDir = normalize(lightPosView.xyz - viewPosition.xyz);
+
+            fBodyPos = bodyPos;
+            fLightPos = lightPos;
+    
+            gl_Position = projectionMatrix * viewPosition;
+        }
+    </script>
+    <script type="module">
+
+        import * as THREE from './files/three.module.js';
+        import { OrbitControls } from './files/OrbitControls.js';
+
+        let camera, scene, renderer, controls;
+        let focus = 5;
+
+        class Star {
+            _texture;
+            _radius;
+            _position;
+            _mesh;
+
+            constructor(texture, radius, position) {
+                this._texture = texture;
+                this._radius = radius;
+                this._position = position.clone();
+                this._mesh = this.#createMesh();
+            }
+
+            #createMesh() {
+                const geometry = new THREE.SphereGeometry(this._radius, 50, 50);
+                const material = new THREE.MeshBasicMaterial({ map: this._texture });
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.position.copy(this._position);
+                return mesh;
+            }
+
+            getMesh() {
+                return this._mesh;
+            }
+
+            getPos() {
+                return this._position.clone();
+            }
+
+            rotate(rotation) {
+                this._mesh.rotation.y += rotation;
+            }
+        }
+
+        class Body extends Star {
+            _distance;
+            _angle;
+            _parent;
+
+            constructor(texture, radius, distance, position, parent = null) {
+                super(texture, radius, position);
+                this._distance = distance;
+                this._angle = 0.0;
+                this._parent = parent;
+                if (parent) {
+                    this._position = this.#calcInitPos();
+                }
+                this._mesh = this.#createMesh();
+            }
+
+            #calcInitPos() {
+                const parentPos = this._parent.getPos();
+                return new THREE.Vector3(
+                    parentPos.x + this._distance,
+                    parentPos.y,
+                    parentPos.z
+                );
+            }
+
+            #createShaderMaterial() {
+                return new THREE.ShaderMaterial({
+                    uniforms: {
+                        bodyPos: { value: this._position },
+                        lightPos: { value: new THREE.Vector3(0.0, 0.0, 0.0) },
+                        lightColor: { value: new THREE.Color(1.0, 1.0, 1.0) },
+                        texture1: { value: this._texture },
+                    },
+                    vertexShader: document.getElementById('vertexShader').textContent,
+                    fragmentShader: document.getElementById('fragmentShader').textContent,
+                });
+            }
+
+            #createMesh() {
+                const sphere = new THREE.SphereGeometry(this._radius, 30, 30);
+                const material = this.#createShaderMaterial();
+                const mesh = new THREE.Mesh(sphere, material);
+                mesh.position.copy(this._position);
+                return mesh;
+            }
+
+            orbit(rate) {
+                this._angle += rate;
+                const parentPos = this._parent ? this._parent.getPos() : new THREE.Vector3(0, 0, 0);
+                this._position.x = parentPos.x + this._distance * Math.cos(this._angle);
+                this._position.z = parentPos.z + this._distance * Math.sin(this._angle);
+                this._mesh.position.set(this._position.x, this._position.y, this._position.z);
+            }
+        }
+
+        class Atmosphere {
+            constructor(parent, thickness, color) {
+                this._parent = parent;
+                this._thickness = this.#setThickness(thickness);
+                this._color = color;
+                this._radius = parent._radius * this._thickness;
+                this._mesh = this.#createMesh();
+            }
+
+            #createShaderMaterial() {
+                return new THREE.ShaderMaterial({
+                    uniforms: {
+                        atmosColor: { value: this._color },
+                        lightColor: { value: new THREE.Color(1.0, 1.0, 1.0) },
+                        lightPos: { value: new THREE.Vector3(0.0, 0.0, 0.0) },
+                        bodyPos: { value: this._parent.getPos() },
+                    },
+                    vertexShader: document.getElementById('atmosVertexShader').textContent,
+                    fragmentShader: document.getElementById('atmosFragmentShader').textContent,
+                    transparent: true,
+                    depthWrite: false,
+                    blending: THREE.AdditiveBlending,
+                });
+            }
+
+            #createMesh() {
+                const atmosphereGeometry = new THREE.SphereGeometry(this._radius, 30, 30);
+                const material = this.#createShaderMaterial();
+                const mesh = new THREE.Mesh(atmosphereGeometry, material);
+
+                // Match parent position
+                mesh.position.copy(this._parent.getPos());
+                return mesh;
+            }
+
+            #setThickness(thickness) {
+                thickness = (1 + thickness/20);
+                return thickness;
+            }
+
+            get() {
+                return this._mesh;
+            }
+
+            updatePosition() {
+                this._mesh.position.copy(this._parent.getPos());
+            }
+        }
+
+        // Textures
+        const textureLoader = new THREE.TextureLoader();
+        const sunTexture = textureLoader.load('./files/maps/sun.jpg');
+        const mercuryTexture = textureLoader.load('./files/maps/mercury.jpg');
+        const venusTexture = textureLoader.load('./files/maps/venus.jpg');
+        const earthTexture = textureLoader.load('./files/maps/earth.jpg');
+        const moonTexture = textureLoader.load('./files/maps/moon.jpg');
+        const marsTexture = textureLoader.load('./files/maps/mars.jpg');
+        const jupiterTexture = textureLoader.load('./files/maps/jupiter.jpg');
+        const saturnTexture = textureLoader.load('./files/maps/saturn.jpg');
+        const uranusTexture = textureLoader.load('./files/maps/uranus.jpg');
+        const neptuneTexture = textureLoader.load('./files/maps/neptune.jpg');
+
+        // Positions
+        const positions = {
+            sun: new THREE.Vector3(0, 0, 0),
+            mercury: new THREE.Vector3(28, 0, 0),
+            venus: new THREE.Vector3(34, 0, 0),
+            earth: new THREE.Vector3(42, 0, 0),
+            moon: new THREE.Vector3(45, 0, 0),
+            mars: new THREE.Vector3(56, 0, 0),
+            jupiter: new THREE.Vector3(94, 0, 0),
+            saturn: new THREE.Vector3(114, 0, 0),
+            uranus: new THREE.Vector3(154, 0, 0),
+            neptune: new THREE.Vector3(174, 0, 0),
+        };
+
+        // Creating celestial bodies
+        const sun = new Star(sunTexture, 10, positions.sun);
+        const mercury = new Body(mercuryTexture, 0.38, 28, positions.mercury);
+        const venus = new Body(venusTexture, 0.95, 34, positions.venus);
+        const earth = new Body(earthTexture, 1, 42, positions.earth);
+        const moon = new Body(moonTexture, 0.27, 3, positions.moon, earth);
+        const mars = new Body(marsTexture, 0.53, 56, positions.mars);
+        const jupiter = new Body(jupiterTexture, 5, 94, positions.jupiter);
+        const saturn = new Body(saturnTexture, 4, 114, positions.saturn);
+        const uranus = new Body(uranusTexture, 2.5, 154, positions.uranus);
+        const neptune = new Body(neptuneTexture, 2, 174, positions.neptune);
+
+        const earthAtmos = new Atmosphere(earth, 1, new THREE.Color(0.3, 0.6, 1.0));
+        const marsAtmos = new Atmosphere(mars, 0.2, new THREE.Color(1.0, 0.56, 0.49));
+
+        init();
+
+        function init() {
+            // Camera
+            camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 500);
+            camera.position.z = 30;
+
+            // Scene
+            scene = new THREE.Scene();
+
+            // Add bodies to the scene
+            scene.add(
+                sun.getMesh(),
+                mercury.getMesh(),
+                venus.getMesh(),
+                earth.getMesh(),
+                earthAtmos.get(),
+                moon.getMesh(),
+                mars.getMesh(),
+                marsAtmos.get(),
+                jupiter.getMesh(),
+                saturn.getMesh(),
+                uranus.getMesh(),
+                neptune.getMesh()
+            );
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.shadowMap.enabled = true;
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // OrbitControls
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+
+            // Handle window resize
+            window.addEventListener('resize', onWindowResize);
+
+            // Start animation loop
+            renderer.setAnimationLoop(animate);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            sun.rotate(0.0009);
+
+            mercury.rotate(0.00017);
+            venus.rotate(0.00004);
+            earth.rotate(0.01);
+            moon.rotate(0.0003);
+            mars.rotate(0.01);
+            jupiter.rotate(0.025);
+            saturn.rotate(0.0223);
+            uranus.rotate(0.0141);
+            neptune.rotate(0.015);
+
+            mercury.orbit(0.004);
+            venus.orbit(0.0016);
+            earth.orbit(0.001);
+            moon.orbit(0.012);
+            mars.orbit(0.0005);
+            jupiter.orbit(0.00008);
+            saturn.orbit(0.00003);
+            uranus.orbit(0.00001);
+            neptune.orbit(0.000006);
+
+            earthAtmos.updatePosition();
+            marsAtmos.updatePosition();
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+Bar {
+    layout: horizontal;
+}
+
+VerticalScroll {
+    width: auto;
+    height: auto;
+    background: $boost;
+    padding: 1;
+}
+
+.top {
+    height: 5;
+    width: 100%;
+    content-align: center middle;
+    text-style: bold;
+    margin: 0 1;
+    border: solid blue;
+}
+
+.general {
+    height: 10;
+    width: 1fr;
+    content-align: center middle;
+    text-style: bold;
+    margin: 0 1;
+    border: solid blue;
+}
+
+.time {
+    height: 10;
+    width: 1fr;
+    content-align: center middle;
+    text-style: bold;
+    margin: 0 1;
+    border: solid yellow;
+}
+
+.air {
+    height: 10;
+    width: 1fr;
+    content-align: center middle;
+    text-style: bold;
+    margin: 0 1;
+    border: solid cornflowerblue;
+}
+
+.error {
+    height: 5;
+    width: 1fr;
+    content-align: center middle;
+    text-style: bold;
+    color: red;
+    margin: 0 1;
+    border: solid red;
+}

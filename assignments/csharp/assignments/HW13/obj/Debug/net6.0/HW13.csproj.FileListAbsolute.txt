@@ -1,0 +1,15 @@
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/HW13
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/HW13.deps.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/HW13.runtimeconfig.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/HW13.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/ref/HW13.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/bin/Debug/net6.0/HW13.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.csproj.AssemblyReference.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.GeneratedMSBuildEditorConfig.editorconfig
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.AssemblyInfoInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.AssemblyInfo.cs
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.csproj.CoreCompileInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/ref/HW13.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW13/obj/Debug/net6.0/HW13.genruntimeconfig.cache

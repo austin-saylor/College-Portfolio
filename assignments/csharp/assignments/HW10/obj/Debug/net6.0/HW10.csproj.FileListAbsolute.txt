@@ -1,0 +1,15 @@
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.csproj.AssemblyReference.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.GeneratedMSBuildEditorConfig.editorconfig
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.AssemblyInfoInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.AssemblyInfo.cs
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.csproj.CoreCompileInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/HW10
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/HW10.deps.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/HW10.runtimeconfig.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/HW10.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/ref/HW10.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/bin/Debug/net6.0/HW10.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/ref/HW10.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW10/obj/Debug/net6.0/HW10.genruntimeconfig.cache

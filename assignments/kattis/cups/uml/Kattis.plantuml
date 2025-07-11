@@ -1,0 +1,16 @@
+@startuml
+scale 2
+title "UML Abstract Class Diagram"
+abstract class Kattis {
+    -_input_source: Any
+    -_data: Any
+    -_answer: Any
+
+    +__init__(data_source: Any) : None
+    +{abstract} read_input() : None
+    +{abstract} data() : Any
+    +{abstract} answer() : Any
+    +{abstract} solve() : None
+    +{abstract} print_answer() : None
+}
+@enduml

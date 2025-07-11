@@ -1,0 +1,11 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Location {
+    +_search_input() : str
+
+    +__init__(search_input: str) : None
+    +search_input: str
+    +has_numbers(input_str: str) : bool
+}
+@enduml

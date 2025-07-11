@@ -1,0 +1,14 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Point {
+    -__x : float
+    -__y : float
+
+    +__init__(x: float, y: float) : None
+	+x() : None
+    +x(value: float) : None
+	+y() : None
+    +y(value: float) : None
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+scale 2
+title "UML Class Interaction"
+class Cup {
+}
+
+abstract class Kattis {
+}
+
+class Cup_List {
+}
+
+class Sort {
+}
+
+Cup_List --* Cup : uses
+Sort --* Cup : uses
+Sort --* Cup_List : uses
+Sort --|> Kattis : inherits
+
+@enduml

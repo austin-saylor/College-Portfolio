@@ -1,0 +1,14 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class FormatGeneral {
+    +_temp() : int
+    +_condition() : str
+
+    +__init__(temp: int, condition: str) : None
+    +temp: int
+    +condition: str
+    +colorcode_temp(temp: int) : str
+    +icon(condition: str) : str
+}
+@enduml

@@ -1,0 +1,15 @@
+Mountain
+Lake
+River
+Canyon
+Beach
+Hill
+Valley
+Cliff
+Desert
+Forest
+Jungle
+Glacier
+Island
+Jungle
+Ocean

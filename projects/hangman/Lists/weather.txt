@@ -1,0 +1,15 @@
+Rain
+Snow
+Thunder
+Lightning
+Blizzard
+Wind
+Tornado
+Hurricane
+Cloudy
+Sunny
+Clear
+Hail
+Sleet
+Flood
+Drought

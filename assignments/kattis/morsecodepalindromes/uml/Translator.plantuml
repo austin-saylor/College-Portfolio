@@ -1,0 +1,13 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Translator {
+    -_morse_code : dict
+
+    +__init__() : None
+    +morse_code : dict
+    +morse_code() : dict
+    +morse_code(newMorseCode : dict) : None
+    +convert(text : str) : str
+}
+@enduml

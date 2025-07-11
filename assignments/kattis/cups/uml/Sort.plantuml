@@ -1,0 +1,17 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Sort {
+    -__data: Cup_List
+    -__answer: list[Any]
+
+    +__init__(data_source: Any) : None
+    +super.__init__(data_souce: Any) : None
+    +data() : Cup_List
+    +answer() : TypedList[Any]
+    +answer(value: TypedList[Any]) : None
+    +read_input() : None
+    +solve() : None
+    +print_answer() : None
+}
+@enduml

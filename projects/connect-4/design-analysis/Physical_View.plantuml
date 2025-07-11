@@ -1,0 +1,26 @@
+@startuml
+title Physical View
+scale 2
+
+node "Computer" {
+    artifact "Connect 4 Game.exe" {
+        component "Python Interpreter" {
+            component "Pygame Library"
+        }
+        component "Application" {
+            component "Game" {
+                note right: Handles the game loop
+            }
+            component "Board" {
+                note right: Manages the state of the game board
+            }
+            component "Turns" {
+                note right: Manages the turns between players
+            }
+            component "Graphics" {
+                note right: Represents the game in graphical form
+            }
+        }
+    }
+}
+@enduml

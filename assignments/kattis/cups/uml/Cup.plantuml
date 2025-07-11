@@ -1,0 +1,12 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Cup {
+    -__diameter: int
+    -__color: str
+
+    +__init__(line: str) : None
+    +diameter() : int
+    +color() : str
+}
+@enduml

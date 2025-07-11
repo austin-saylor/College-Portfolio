@@ -1,0 +1,10 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class WeatherApp {
+    +compose() : ComposeResult
+    +action_report_forecast(input: str, feedback: str) : None
+    +feedback(event: Input.Submitted) : None
+    +quit(event: Key) : None
+}
+@enduml

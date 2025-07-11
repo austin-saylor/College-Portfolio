@@ -1,0 +1,34 @@
+@startuml
+scale 2
+title "UML Class Interaction"
+class WeatherApp {
+}
+
+class Validate {
+}
+
+class Bar {
+}
+
+class Location {
+}
+
+class Data {
+}
+
+class FormatGeneral {
+}
+
+class FormatWind {
+}
+
+WeatherApp --> Validate : uses
+WeatherApp --> Bar : uses
+WeatherApp --> Location : uses
+Validate --> Data : uses
+WeatherApp --> Data : uses
+Data --> Location : uses
+Data --> FormatGeneral : uses
+Data --> FormatWind : uses
+
+@enduml

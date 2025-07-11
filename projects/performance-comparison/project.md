@@ -1,0 +1,83 @@
+# CSCI 330 - Programming Languages Final Project - Java vs C++:
+I did my final project on the Java Programming Language. For this project, I did some research on the features that make Java stand out from other languages, and I compared it to another popular programming language- C++. I also addressed the pros and cons to using Java for the development of projects. I presented my findings from this research to the class, and demonstrated a performance comparison between Java and C++ on a graph program.
+
+## Presentation Notes:
+
+- Foundation:
+    - Java was created in 1995 by James Gosling, who worked at Sun Microsystems at the time.
+    - Sun Microsystems was later acquired by Oracle in 2010.
+    - It was based on C++.
+    - The idea for the language was “Write once, run anywhere”.
+- Usage:
+    - While Java is an older language, it is still being widely used today for a variety of different purposes, such as:
+        - 97% of Enterprise Applications Run Java
+        - It’s used on 89% of Desktop Computers
+        - 3 Billion Mobile Phones
+        - 125 Million TV Devices
+        - Game Development
+        - Internet of Things (IoT)
+        - AI and Machine Learning
+        - 9 Million Developers across the Globe
+- Characteristics:
+    - Similar to C++ in syntax
+    - An Object-Oriented Language
+    - Platform-Independent
+    - Multi-Threaded
+        - This means that Java can handle multiple tasks at once, without using a large amount of memory.
+- Pros of Java Development:
+    - Object-Oriented:
+        - Allows for more organized code.
+        - Facilitates maintenance, and scalability.
+        - Makes the code more understandable to humans.
+    - Heightened Security:
+        - With Java being an object-oriented language, it comes with features such as encapsulation, abstraction, and inheritance.
+        - Encapsulation: Involves hiding the implementation details of one class from the others.
+        - Inheritance: Enables the construction of new classes from existing ones.
+        - Abstraction: Involves hiding the details of an object from the user.
+        - In addition to all of this, Java has firm security policies.
+        - All of this makes Java a very secure language, and make it an appealing choice to use for many applications.
+    - Platform Independent:
+        - Platform Independence means that developers can write code once, and can then run it on any platform through the use of a Java Virtual Machine (JVM).
+        - This is how the “Write Once, Run Anywhere” idea comes into play.
+        - Java’s Platform Independence makes it a popular choice for:
+            - Web Applications
+            - Mobile Applications
+            - Cloud Computing
+            - Big Data Projects
+            - All of these projects typically require cross-platform compatibility.
+    - Architecture Neutral:
+        - Java is an architecture-neutral language.
+        - This means that Java code doesn’t execute differently on devices with different hardware.
+        - Example:
+            - In C programs, int data types occupy 2 bytes of memory in 32-bit architecture, and 4 bytes of memory in 64-bit architecture.
+            - In Java programs, int data types occupy 4 bytes of memory in both 32 and 64-bit architectures.
+        - As a result, Java Developers don’t have to worry about execution differences across different devices, and can instead focus more on building quality applications.
+- Cons of Java Development:
+    - Performance Issues:
+        - Slower than other languages, such as C++
+        - This is due to Java’s Virtual Machine and Memory Management
+        - Garbage Collection
+        - Caching Configurations
+        - Thread Deadlocks may occur if they’re not properly managed.
+    - Licensing Expenses:
+        - In January of 2019, Oracle announced a charging policy for commercial licensing of Java 11 and higher.
+    - GUI Development Complications:
+        - There aren’t many advanced frameworks available in Java that allow for complex GUI development.
+        - This makes Java less suitable for the development of desktop applications.
+- Conclusion:
+    - Java is an older language, but it is still widely used to this day.
+    - It does have some notable drawbacks.
+        - Namely, its performance issues.
+    - However, It offers benefits that make it worth considering, such as its enhanced security and platform independence.
+    - Java is still an ideal choice for various projects, such as:
+        - Web/Mobile apps
+        - Cloud computing
+        - Big Data projects
+
+## References:
+- JavaTPoint. “Features of Java - Javatpoint.” Www.javatpoint.com, www.javatpoint.com/features-of-java. Accessed 15 May 2024.
+- Olumide, Shittu . “What Is Java Used for in 2023? The Java Programming Language and Java Platform Strengths.” FreeCodeCamp.org, 25 Apr. 2023, www.freecodecamp.org/news/what-is-java-used-for/. Accessed 15 May 2024.
+- Rafalski, Kacper. “Pros and Cons of Java Development in 2023.” Www.netguru.com, 12 Sept. 2023, www.netguru.com/blog/java-pros-and-cons#:~:text=Java%20is%20a%20versatile%20and. Accessed 15 May 2024.
+- Shankland, Stephen. “Oracle Buys Sun, Becomes Hardware Company.” CNET, 27 Jan. 2010, www.cnet.com/culture/oracle-buys-sun-becomes-hardware-company/. Accessed 15 May 2024.
+- Toal, Rory. “What Is Java and Why Is It Important?” Code Institute Global, 14 Oct. 2014, codeinstitute.net/global/blog/what-is-java/. Accessed 15 May 2024.
+- Zhekov, Deyan. “What Is Meant by Java Being Architecture Neutral and Why That’s a Perk? - Dreamix.” Dreamix, 18 Feb. 2020, dreamix.eu/insights/what-is-meant-by-java-being-architecture-neutral-and-why-thats-a-perk/. Accessed 15 May 2024.

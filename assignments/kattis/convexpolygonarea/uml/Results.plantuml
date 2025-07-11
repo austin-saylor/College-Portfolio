@@ -1,0 +1,11 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Results {
+    -__n : int
+
+    +__init__(n: int) : None
+    +n() : int
+    +generate() : list[float]
+}
+@enduml

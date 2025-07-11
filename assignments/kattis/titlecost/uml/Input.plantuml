@@ -1,0 +1,12 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Input {
+    -_input_str : list[str]
+
+    +__init__() : None
+    +input_str : list[str]
+    +input_str : None
+    +get(): list[str]
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Calculator {
+    +_numbers() : str
+
+    +__init__(numbers: list[int]) : None
+    +__numbers: str
+    +minimum_number() : str
+    +maximum_number() : str
+    +range_value() : str
+}
+@enduml

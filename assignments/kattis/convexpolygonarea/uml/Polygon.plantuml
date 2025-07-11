@@ -1,0 +1,12 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Polygon {
+    -__points : list[Point]
+
+    +__init__() : None
+    +points() : list[Point]
+    +add_point(point : Point) : None
+    +calculate_area() : float
+}
+@enduml

@@ -1,0 +1,15 @@
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/CustomerManagement
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/CustomerManagement.deps.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/CustomerManagement.runtimeconfig.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/CustomerManagement.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/ref/CustomerManagement.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/bin/Debug/net6.0/CustomerManagement.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.csproj.AssemblyReference.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.GeneratedMSBuildEditorConfig.editorconfig
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.AssemblyInfoInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.AssemblyInfo.cs
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.csproj.CoreCompileInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/ref/CustomerManagement.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/CustomerManagement/obj/Debug/net6.0/CustomerManagement.genruntimeconfig.cache

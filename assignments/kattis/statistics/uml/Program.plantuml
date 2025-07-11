@@ -1,0 +1,7 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Program {
+    +run() : None
+}
+@enduml

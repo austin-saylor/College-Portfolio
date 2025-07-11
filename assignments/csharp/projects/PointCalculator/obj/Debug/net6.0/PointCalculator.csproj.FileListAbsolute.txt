@@ -1,0 +1,15 @@
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.csproj.AssemblyReference.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.GeneratedMSBuildEditorConfig.editorconfig
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.AssemblyInfoInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.AssemblyInfo.cs
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.csproj.CoreCompileInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/PointCalculator
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/PointCalculator.deps.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/PointCalculator.runtimeconfig.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/PointCalculator.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/ref/PointCalculator.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/bin/Debug/net6.0/PointCalculator.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/ref/PointCalculator.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Projects/PointCalculator/obj/Debug/net6.0/PointCalculator.genruntimeconfig.cache

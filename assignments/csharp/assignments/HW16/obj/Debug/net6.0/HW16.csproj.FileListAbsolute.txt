@@ -1,0 +1,15 @@
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/HW16
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/HW16.deps.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/HW16.runtimeconfig.json
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/HW16.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/ref/HW16.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/bin/Debug/net6.0/HW16.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.csproj.AssemblyReference.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.GeneratedMSBuildEditorConfig.editorconfig
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.AssemblyInfoInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.AssemblyInfo.cs
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.csproj.CoreCompileInputs.cache
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/ref/HW16.dll
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.pdb
+/home/asaylor/Projects/CSCI310-ajsaylor/Homework/HW16/obj/Debug/net6.0/HW16.genruntimeconfig.cache

@@ -1,0 +1,15 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class FormatWind {
+    +_speed() : int
+    +_deg() : int
+
+    +__init__(speed: int, deg: int) : None
+    +speed: int
+    +deg: int
+    +colorcode_speed(speed: int) : str
+    +format_direction(deg: int) : str
+    +format_wind_description(speed: int) : str
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Cost {
+    -_s: str
+    -_c: float
+
+    +__init__(s: str, c: float) : None
+    +s(): str
+    +c(): float
+    +calculate() : None
+}
+@enduml

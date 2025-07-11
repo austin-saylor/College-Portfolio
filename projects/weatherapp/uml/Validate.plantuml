@@ -1,0 +1,8 @@
+@startuml
+scale 2
+title "UML Class Diagram"
+class Validate {
+    +validate(input_string: str) : ValidationResult
+    +location_exists(input_string: str) : bool
+}
+@enduml
